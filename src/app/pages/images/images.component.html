@@ -1,2 +1,4 @@
 <h1>Gobelinstagramme™</h1>
-<app-images-single></app-images-single>
+<div class="images-container">
+    <app-images-single *ngFor="let item of data" [item]="item"></app-images-single>
+</div>

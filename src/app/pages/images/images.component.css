@@ -1,0 +1,5 @@
+.images-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 15% 0 15%;
+}
