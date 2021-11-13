@@ -1,0 +1,22 @@
+<mat-card class="carte">
+    <mat-card-header>
+        <div mat-card-avatar style="background-image: url({{item.avatar}}); background-size: cover;"></div>
+        <mat-card-title>{{item.username}}</mat-card-title>
+        <mat-card-subtitle>{{item.location}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{item.image}}">
+    <button mat-icon-button color="warn" (click)="liking()">
+        <mat-icon>{{liked ? "favorite" : "favorite_border"}}</mat-icon>{{liked ? item.likes + 1 : item.likes}}
+    </button>
+    <mat-card-content>
+        <p>{{item.description | charLimit}}</p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Ajouter un commentaire</mat-label>
+            <input matInput (keyup.enter)="add()">
+        </mat-form-field>
+        <button mat-icon-button color="primary" (click)="add()">Publier</button>
+        <ul>
+            <li *ngFor="let item of comments">{{item.content}}</li>
+        </ul>
+    </mat-card-content>
+</mat-card>

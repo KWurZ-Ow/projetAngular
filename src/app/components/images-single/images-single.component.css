@@ -1,0 +1,4 @@
+.carte{
+    width: 300px;
+    height: calc(100% - 30px);
+}
