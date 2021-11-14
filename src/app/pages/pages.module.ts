@@ -6,6 +6,8 @@ import { PagesRoutingModule } from './pages-routing.module'
 import { SharedModule } from '../components/shared.module';
 import { ImagesComponent } from './images/images.component';
 import { ContactComponent } from './contact/contact.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ ImagesComponent, ContactComponent],
@@ -13,6 +15,8 @@ import { ContactComponent } from './contact/contact.component';
     CommonModule,
     SharedModule,
     PagesRoutingModule,
+    MatTabsModule,
+    ReactiveFormsModule
   ]
 })
 export class PagesModule { }

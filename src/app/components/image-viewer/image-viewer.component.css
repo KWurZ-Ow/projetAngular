@@ -3,7 +3,9 @@
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+    padding: 25px 10vw 50px 10vw;
+    background: linear-gradient(120deg, #379eff 0%,#fa11ee 100%);
 }
-*{
-    background-color: rgb(24, 24, 24);
+.images-container.reverseBackground{
+    background: linear-gradient(120deg,#fa11ee 0%, #379eff 100%);
 }

@@ -1,2 +1,12 @@
-<h1>Gobelinstagramme™</h1>
-<app-image-viewer [images]="images"></app-image-viewer>
+<app-nav></app-nav>
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab label="Accueil">
+        <app-image-viewer [images]="imagesHome"></app-image-viewer>
+    </mat-tab>
+    <mat-tab label="Abonnements">
+        <app-image-viewer [revertedBackground]="true" [images]="imagesSubscription"></app-image-viewer>
+    </mat-tab>
+    <mat-tab label="Votre profil">
+        <app-image-viewer [images]="imagesPersonnal"></app-image-viewer>
+    </mat-tab>
+  </mat-tab-group>

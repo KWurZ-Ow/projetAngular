@@ -17,16 +17,14 @@ export class ImagesSingleComponent implements OnInit {
   
   constructor() { }
 
-  comments = [{content: "test de commentaire"}]
-  new: string = ""
+  comments = [{content: "oui"}]
 
-  add(){
-    console.log(this.new);
+  add(content: string){
+    console.log(content);
     
-    if (this.new != ""){
-      this.comments.push({content: this.new})
+    if (content != ""){
+      this.comments.push({content: content})
     }
-    this.new = ""
   }
 
   ngOnInit(): void { 

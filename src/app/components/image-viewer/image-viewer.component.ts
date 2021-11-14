@@ -9,6 +9,7 @@ import {Image} from "../../models/images-interface";
 export class ImageViewerComponent implements OnInit {
   
   @Input()images!: Image[];
+  @Input()revertedBackground!: boolean;
 
   constructor() { }
   

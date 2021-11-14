@@ -1,0 +1,10 @@
+h1{
+    font-size: 5em;
+    text-align: center;
+    background: linear-gradient(120deg,#379eff 0%,#fa11ee 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    height: 100px;
+    padding-top: 30px;
+}
