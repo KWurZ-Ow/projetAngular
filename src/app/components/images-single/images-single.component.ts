@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-images-single',
