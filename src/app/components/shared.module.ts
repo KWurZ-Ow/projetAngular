@@ -12,6 +12,7 @@ import { CharLimitPipe } from '../pipes/char-limit.pipe';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { NavComponent } from './nav/nav.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
  
 @NgModule({
@@ -20,7 +21,8 @@ import { NavComponent } from './nav/nav.component';
     ImageViewerComponent,
     NavComponent,
     CharLimitPipe,
-    NavComponent
+    NavComponent,
+    ContactFormComponent
   ],
   imports: [
     CommonModule,
@@ -35,6 +37,7 @@ import { NavComponent } from './nav/nav.component';
   exports: [
     ImagesSingleComponent,
     ImageViewerComponent,
+    ContactFormComponent,
     NavComponent,
     CharLimitPipe
   ]

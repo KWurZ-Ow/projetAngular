@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -7,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  @Input()page!:string
 
+  constructor(private router: Router) { }
+
+  navigationButton(path:string){
+    this.router.navigateByUrl(`/${path}`)
+  }
   ngOnInit(): void {
   }
 

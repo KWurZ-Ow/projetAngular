@@ -1,48 +1,5 @@
-<div *ngIf="submitted" style="display: flex;align-items: center;flex-direction: column;">
-  <h3>Message sucessfully send</h3>
-  <button class="submitBnt btn btn-primary">Send another message</button>
+<app-nav [page]="'contact'"></app-nav>
+<div>
+    <h2>Envoyez-nous un message ! 😄</h2>
+    <app-contact-form></app-contact-form>
 </div>
-<form *ngIf="!submitted" [formGroup]="contactForm" (ngSubmit)="submitForm()" name="myForm">
-  <p id="error-msg"></p>
-  <div id="simple-msg"></div>
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="form-group mt-2">
-        <input formControlName="name" name="name" id="name" type="text" class="form-control"
-        placeholder="Your name*">
-        <span style="color: red;" *ngIf="!contactForm.controls.name.valid">Your name is required</span>
-      </div>
-    </div>
-    <div class="col-lg-6">
-      <div class="form-group mt-2">
-        <input formControlName="email" name="email" id="email" type="email" class="form-control"
-        placeholder="Your email*">
-        <span style="color: red;" *ngIf="!contactForm.controls.email.valid && contactForm.controls.email.pristine">Please, enter a valid email adress</span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="form-group mt-2">
-        <input formControlName="subject" type="text" class="form-control" id="subject" placeholder="Your Subject.."/>
-        <span style="color: red;" *ngIf="!contactForm.controls.subject.valid">The subject is required</span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="form-group mt-2">
-        <textarea formControlName="comment" name="comments" id="comments" rows="4" class="form-control"
-        placeholder="Your message..."></textarea>
-        <span style="color: red;" *ngIf="!contactForm.controls.comment.valid">Please enter a message</span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-12 text-right">
-      <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary"
-      value="Send Message">
-      <div id="simple-msg"></div>
-    </div>
-  </div>
-</form>

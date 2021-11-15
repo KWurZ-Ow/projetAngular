@@ -1,0 +1,37 @@
+<mat-card>
+    <div *ngIf="submitted">
+        <h3>Votre message a bien été envoyé</h3>
+        <button (click)="resetForm()" mat-raised-button>Envoyer un autre message</button>
+    </div>
+    <form *ngIf="!submitted" [formGroup]="contactForm" (ngSubmit)="submitForm()" name="myForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Nom</mat-label>
+            <input matInput placeholder="Ex. jean bon"  formControlName="name" name="name">
+            <mat-error *ngIf="!contactForm.controls.name.valid">
+                Votre nom est requis
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Ex. jean.bon@example.com"  formControlName="email" name="email">
+            <mat-error *ngIf="!contactForm.controls.email.valid">
+                Entrez une adresse e-mail correcte
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Objet</mat-label>
+            <input matInput placeholder="Objet de votre message"  formControlName="subject" name="subject">
+            <mat-error *ngIf="!contactForm.controls.subject.valid">
+                L'objet ne peut pas être vide
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Message</mat-label>
+            <textarea matInput placeholder="Votre message"  formControlName="comment" name="comment"></textarea>
+            <mat-error *ngIf="!contactForm.controls.comment.valid">
+                Le sontenu du message ne peut pas être vide
+            </mat-error>
+        </mat-form-field>
+        <button type="submit" mat-raised-button>Envoyer</button>
+    </form>
+</mat-card>

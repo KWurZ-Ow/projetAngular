@@ -1,4 +1,5 @@
-<div class="nav">
+<nav>
     <h1>Gobelinstagram™</h1>
-    <a href="contact">Contact</a>
-</div>
+    <button *ngIf="page != 'contact'" mat-raised-button (click)="navigationButton('contact')">Contact</button>
+    <button *ngIf="page != 'home-page'" mat-raised-button (click)="navigationButton('home-page')">Accueil</button>
+</nav>

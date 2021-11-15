@@ -1,0 +1,11 @@
+div{
+    background: linear-gradient(120deg, #379eff 0%,#fa11ee 100%);
+    height: calc(100% - 147px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    font-size: 2em;
+    width: 300px;
+}
