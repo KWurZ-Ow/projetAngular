@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-images-single',
@@ -8,22 +8,31 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ImagesSingleComponent implements OnInit {
 
   liked:boolean = false;
+
+  displayComments:boolean = false
+  
+  @Input() item:any = {};
+  @Output() displayCommentsEvent = new EventEmitter<boolean>()
   
   liking() {
     this.liked = !this.liked
-    
+    this.item.likes += 1
   }
-  @Input() item:any = {};
   
   constructor() { }
 
-  comments = [{content: "oui"}]
+  emitDisplayCommentsEvent() {
+    this.displayCommentsEvent.emit(this.displayComments)
+    this.displayComments = !this.displayComments
+  }
+
+  onDisplayCommentsChange(){
+
+  }
 
   add(content: string){
-    console.log(content);
-    
     if (content != ""){
-      this.comments.push({content: content})
+      this.item.comments.push({content: content, avatar: this.item.avatar})
     }
   }
 

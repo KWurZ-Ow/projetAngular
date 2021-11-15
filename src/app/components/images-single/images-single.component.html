@@ -6,7 +6,7 @@
     </mat-card-header>
     <img mat-card-image src="{{item.image}}">
     <button mat-icon-button color="warn" (click)="liking()">
-        <mat-icon>{{liked ? "favorite" : "favorite_border"}}</mat-icon>{{liked ? item.likes + 1 : item.likes}}
+        <mat-icon>{{liked ? "favorite" : "favorite_border"}}</mat-icon>{{item.likes}}
     </button>
     <mat-card-content>
         <p>{{item.description | charLimit}}</p>
@@ -15,8 +15,9 @@
             <input matInput (keyup.enter)="add(content.value)" #content autocomplete="false">
         </mat-form-field>
         <button mat-icon-button color="primary" (click)="add(content.value)">Publier</button>
-        <ul>
-            <li *ngFor="let item of comments">{{item.content}}</li>
+        <button mat-raised-button (click)="emitDisplayCommentsEvent()">{{displayComments ? 'masquer les commentaires' : 'afficher les commentaires'}}</button>
+        <ul *ngIf="displayComments">
+            <li *ngFor="let item of item.comments"><img src="{{item.avatar}}"> {{item.content}}</li>
         </ul>
     </mat-card-content>
 </mat-card>
